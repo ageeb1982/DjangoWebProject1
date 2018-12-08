@@ -17,6 +17,7 @@
     <WorkingDirectory>.</WorkingDirectory>
     <LaunchProvider>Django launcher</LaunchProvider>
     <OutputPath>.</OutputPath>
+    <WebBrowserUrl>http://localhost</WebBrowserUrl>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -33,11 +34,28 @@
     <Compile Include="app\views.py" />
     <Compile Include="app\__init__.py" />
     <Compile Include="app\migrations\__init__.py" />
+    <Compile Include="Blogs\admin.py" />
+    <Compile Include="Blogs\apps.py" />
+    <Compile Include="Blogs\form.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Blogs\migrations\__init__.py" />
+    <Compile Include="Blogs\models.py" />
+    <Compile Include="Blogs\tests.py" />
+    <Compile Include="Blogs\views.py" />
+    <Compile Include="Blogs\__init__.py" />
     <Compile Include="manage.py" />
     <Compile Include="DjangoWebProject1\__init__.py" />
     <Compile Include="DjangoWebProject1\settings.py" />
     <Compile Include="DjangoWebProject1\urls.py" />
     <Compile Include="DjangoWebProject1\wsgi.py" />
+    <Compile Include="myapp\admin.py" />
+    <Compile Include="myapp\apps.py" />
+    <Compile Include="myapp\migrations\__init__.py" />
+    <Compile Include="myapp\models.py" />
+    <Compile Include="myapp\tests.py" />
+    <Compile Include="myapp\views.py" />
+    <Compile Include="myapp\__init__.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\" />
@@ -49,9 +67,19 @@
     <Folder Include="app\static\app\scripts\" />
     <Folder Include="app\templates\" />
     <Folder Include="app\templates\app\" />
+    <Folder Include="Blogs\" />
+    <Folder Include="Blogs\migrations\" />
+    <Folder Include="templates\" />
+    <Folder Include="templates\Blogs\" />
     <Folder Include="DjangoWebProject1\" />
+    <Folder Include="myapp\" />
+    <Folder Include="myapp\migrations\" />
+    <Folder Include="myapp\templates\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="templates\Blogs\index.html" />
+    <Content Include="templates\home.html" />
+    <Content Include="myapp\templates\index.html" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
     <Content Include="app\static\app\content\bootstrap.css" />
@@ -128,4 +156,5 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
 </Project>

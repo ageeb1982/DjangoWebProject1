@@ -3,12 +3,13 @@ Definition of urls for DjangoWebProject1.
 """
 
 from datetime import datetime
+import Blogs
 from django.conf.urls import url
 import django.contrib.auth.views
-
+from django.contrib import admin
 import app.forms
 import app.views
-
+from  Blogs import views 
 # Uncomment the next lines to enable the admin:
 # from django.conf.urls import include
 # from django.contrib import admin
@@ -16,7 +17,9 @@ import app.views
 
 urlpatterns = [
     # Examples:
-    url(r'^$', app.views.home, name='home'),
+
+   url(r'^$', Blogs.views.home, name='home'),
+url(r'^admin/', admin.site.urls),
     url(r'^contact$', app.views.contact, name='contact'),
     url(r'^about', app.views.about, name='about'),
     url(r'^login/$',
